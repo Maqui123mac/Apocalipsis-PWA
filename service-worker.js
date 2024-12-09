@@ -21,33 +21,18 @@ const urlsToCache = [
   '/js/plugin.js',
   '/js/jquery.mCustomScrollbar.concat.min.js',
   '/js/custom.js',
-  '/https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js',
   '/app.js'
 ];
 
-// Install service worker
+
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+  console.log('Service Worker instalado');
 });
 
-// Fetch resources
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
+  console.log('Fetch interceptado para:', event.request.url);
 });
+
 
 // Activate service worker
 self.addEventListener('activate', event => {

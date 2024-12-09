@@ -2,7 +2,7 @@
     "name": "Apocalipsis Z Hunters",
     "short_name": "AZH",
     "description": "Una Aventura Apocaliptica",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
